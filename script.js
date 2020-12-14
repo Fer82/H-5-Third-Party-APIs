@@ -45,6 +45,8 @@ function initPage() {
     }
   ];
 
-  
+  const dayPlan = JSON.parse(localStorage.getItem("Schedule")) || openSchedule;
+    const timeSlotContainer = document.getElementById("timeSlot");
+    timeSlotContainer.innerHTML = "";
 }
 

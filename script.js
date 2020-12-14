@@ -46,7 +46,32 @@ function initPage() {
   ];
 
   const dayPlan = JSON.parse(localStorage.getItem("Schedule")) || openSchedule;
-    const timeSlotContainer = document.getElementById("timeSlot");
-    timeSlotContainer.innerHTML = "";
+  const timeSlotContainer = document.getElementById("timeSlot");
+  timeSlotContainer.innerHTML = "";
+
+   // For loop to generate the time slots for the whole day
+   for (let i = 0; i < dayPlan.length; i++) {
+    let hourString;
+    const hour = 9 + i;
+    if (hour < 12) {
+      hourString = `${hour} AM`;
+    } else if (hour === 12) {
+      hourString = `${hour} PM`;
+    } else {
+      hourString = `${hour - 12} PM`
+    }
+    const timeSlot = document.createElement("div");
+    timeSlot.setAttribute("class", "row input-group timeSlot");
+    timeSlotContainer.append(timeSlot);
+
+    const timeContainer = document.createElement("div");
+    timeContainer.setAttribute("class", "input-group-prepend");
+    timeSlot.append(timeContainer);
+
+    const timeSpan = document.createElement("span");
+    timeSpan.setAttribute("class", "input-group-text hour");
+    timeSpan.innerHTML = hourString;
+    timeContainer.append(timeSpan);
+  }
 }
 

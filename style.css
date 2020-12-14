@@ -23,9 +23,10 @@ body {
   
   .description{
     white-space: pre-wrap;
+    height: 80px;
   }
   
-  .time-block{
+  .timeSlot{
     text-align: center;
     border-radius: 15px;
   }
@@ -40,6 +41,7 @@ body {
     background-color: #ffffff;
     color: #000000;
     border-top: 1px dashed #000000;
+    width: 60px;
   }
   
   .past {
@@ -63,6 +65,8 @@ body {
     border-bottom-right-radius: 15px;
     background-color: #06AED5;
     color: white;
+    width: 90px;
+   
   }
   
   .saveBtn i:hover {
@@ -70,3 +74,6 @@ body {
     transition: all .3s ease-in-out;
   }
   
+  i {
+    margin-top: 33px;
+  }
